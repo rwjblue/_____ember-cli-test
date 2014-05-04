@@ -1,0 +1,7 @@
+{
+  "name": "chatapp-css",
+  "dependencies": {
+    "compass-mixins": "https://github.com/Blooie/compass-mixins.git#7ba7b64c6d83bc19c2596bacea6dc4661450bfbe",
+    "compass-animate": "https://github.com/Blooie/compass-animate.git"
+  }
+}

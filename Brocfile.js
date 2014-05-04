@@ -4,6 +4,10 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp({
   name: require('./package.json').name,
+  
+  trees: {
+      cssTree: ['app/styles/vendor/compass-animate/stylesheets/', 'app/styles/vendor/compass-mixins/lib/']
+  }
 
   getEnvJSON: require('./config/environment')
 });
