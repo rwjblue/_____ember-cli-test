@@ -14,11 +14,11 @@
   </head>
   <body>
     <script>
-      window.ENV = {{ENV}};
+      window.SomeTestENV = {{ENV}};
     </script>
     <script src="assets/some-test.js"></script>
     <script>
-      window.SomeTest = require('some-test/app')['default'].create(ENV.APP);
+      window.SomeTest = require('some-test/app')['default'].create(SomeTestENV.APP);
     </script>
   </body>
 </html>
