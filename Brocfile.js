@@ -1,6 +1,12 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var concat   = require('broccoli-concat');
+
+var styles = concat('app/styles', {
+  inputFiles: [ '*.css' ],
+  outputFile: '/app.css'
+});
 
 var app = new EmberApp({
   name: require('./package.json').name,
@@ -11,6 +17,10 @@ var app = new EmberApp({
   minifyCSS: {
     enabled: true,
     options: {}
+  },
+
+  trees: {
+    styles: styles
   },
 
   getEnvJSON: require('./config/environment')
