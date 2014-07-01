@@ -2,6 +2,7 @@
 
 var Application = require('some-test/app')['default'];
 var Router = require('some-test/router')['default'];
+import Ember from 'ember';
 
 export default function startApp(attrs) {
   var App;
