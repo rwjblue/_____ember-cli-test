@@ -2,7 +2,17 @@
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-var app = new EmberApp();
+var app = new EmberApp({
+  vendorFiles: {
+    'loader.js': undefined,
+    'jquery.js': undefined,
+    'handlebars.js': undefined,
+    'ember.js': {
+      development: 'vendor/ember/ember.prod.js',
+      production:  'vendor/ember/ember.prod.js'
+    }
+  }
+});
 
 // Use `app.import` to add additional libraries to the generated
 // output files.
