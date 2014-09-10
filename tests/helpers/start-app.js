@@ -1,12 +1,13 @@
 import Ember from 'ember';
-import Application from 'some-test/app';
-import Router from 'some-test/router';
-import config from 'some-test/config/environment';
+import Application from '../../app';
+import Router from '../../router';
+import config from '../../config/environment';
 
 export default function startApp(attrs) {
   var App;
 
-  var attributes = Ember.merge(config, attrs); // use defaults, but you can override;
+  var attributes = Ember.merge({}, config.APP);
+  attributes = Ember.merge(attributes, attrs); // use defaults, but you can override;
 
   Router.reopen({
     location: 'none'
