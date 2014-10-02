@@ -2,7 +2,27 @@
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-var app = new EmberApp();
+var isProductionLikeBuild = ['production', 'staging'].indexOf(process.env.EMBER_ENV) > -1;
+
+var app = new EmberApp({
+  wrapInEval: isProductionLikeBuild,
+  minifyCSS: {
+    enabled: isProductionLikeBuild
+  },
+  minifyJS: {
+    enabled: isProductionLikeBuild
+  },
+  tests: !isProductionLikeBuild,
+  hinting: !isProductionLikeBuild,
+  vendorFiles: {
+    'handlebars.js': {
+      staging:  'bower_components/handlebars/handlebars.runtime.js'
+    },
+    'ember.js': {
+      staging:  'bower_components/ember/ember.prod.js'
+    }
+  }
+});
 
 // Use `app.import` to add additional libraries to the generated
 // output files.
